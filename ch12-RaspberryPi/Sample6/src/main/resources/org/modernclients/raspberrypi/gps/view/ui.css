@@ -1,0 +1,16 @@
+.box {
+    -fx-padding: 20;
+    -fx-spacing: 10;
+    -fx-border-color: darkgray;
+    -fx-border-width: 0 0 0 1;
+}
+
+.label.gps-data {
+    -fx-text-fill: blue;
+    -fx-font-size: 1.1em;
+}
+
+.label.gps {
+    -fx-text-fill: darkgray;
+    -fx-font-size: 1.0em;
+}

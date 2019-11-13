@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>jar</packaging>
+  <groupId>org.modernclient</groupId>
+  <artifactId>nd4jshell</artifactId>
+  <version>1.0.0</version>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>org.nd4j</groupId>
+      <artifactId>nd4j-native-platform</artifactId>
+      <version>1.0.0-beta3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>11</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>org.modernclient.HelloNd4j</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+

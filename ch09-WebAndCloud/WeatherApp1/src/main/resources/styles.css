@@ -1,0 +1,14 @@
+.label {
+    -fx-font-size: 1.4em;
+    -fx-text-fill: blue;
+}
+
+.label.desc {
+    -fx-font-size: 1.2em;
+    -fx-text-fill: gray;
+}
+
+.label.temp {
+    -fx-font-size: 1.1em;
+    -fx-text-fill: green;
+}

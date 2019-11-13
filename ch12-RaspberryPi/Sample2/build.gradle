@@ -1,0 +1,23 @@
+plugins {
+  id 'application'
+  id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    modules = [ 'javafx.controls' ]
+}
+
+mainClassName = "$moduleName/org.modernclients.raspberrypi.HelloFX"
+
+def javaHome = '/opt/jdk-11.0.4+11'
+def javafxHome = '/opt/armv6hf-sdk'
+
+task runLocalEmbedded(type: Exec) {
+    dependsOn 'build'
+
+    commandLine 'sudo', "${javaHome}/bin/java", '-Dfile.encoding=UTF-8', '--module-path', "${javafxHome}/lib:${buildDir}/libs", '-Dembedded=monocle', '-Dglass.platform=Monocle', '-m', "${project.mainClassName}"
+} 

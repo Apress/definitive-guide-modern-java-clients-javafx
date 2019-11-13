@@ -1,0 +1,58 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'org.hidetake.ssh' version '2.10.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+mainClassName = "$moduleName/org.modernclients.raspberrypi.MainApp"
+
+def workingDir = '/home/pi/ModernClients/ch12-RaspberryPi/'
+def javaHome = '/opt/jdk-11.0.4+11'
+def javafxHome = '/opt/armv6hf-sdk'
+
+task libs(type: Copy) {
+    dependsOn 'jar'
+    into "${buildDir}/libs/"
+    from configurations.runtime
+}
+
+remotes {
+    pi11 {
+        host = 'raspberrypi.local'
+        user = 'pi'
+        password = 'pi'
+    }
+}
+
+task runRemoteEmbedded {
+    dependsOn 'libs'
+    ssh.settings {
+        knownHosts = allowAnyHosts
+    }
+    doLast {
+        ssh.run {
+            session(remotes.pi11) {
+                execute "mkdir -p ${workingDir}/${project.name}/dist"
+
+                fileTree("${buildDir}/libs")
+                        .filter { it.isFile() && ! it.name.startsWith('javafx')}
+                        .files
+                        .each { put from:it, into: "${workingDir}/${project.name}/dist/${it.name}"}
+
+                executeSudo "${javaHome}/bin/java -Dfile.encoding=UTF-8 " +
+                        "--module-path=${javafxHome}/lib:${workingDir}/${project.name}/dist " +
+                        "-Dembedded=monocle -Dglass.platform=Monocle " +
+                        "-classpath '${workingDir}/${project.name}/dist/*' " +
+                        "-m ${project.mainClassName}"
+            }
+        }
+    }
+}

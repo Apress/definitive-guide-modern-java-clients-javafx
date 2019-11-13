@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>jar</packaging>
+  <groupId>org.modernclient</groupId>
+  <artifactId>standalone</artifactId>
+  <version>1.0.0</version>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>11</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+            <executable>java</executable>
+            <longModulepath>false</longModulepath>
+            <arguments>
+                <argument>--module-path</argument>
+                <classpath />
+                <argument>--add-modules</argument>
+                <argument>javafx.controls</argument>
+                <argument>-classpath</argument>
+                <classpath />
+                <argument>org.modernclient.StandAlone</argument>
+            </arguments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+

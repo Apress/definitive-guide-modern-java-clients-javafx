@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+    id 'org.beryx.jlink' version '2.10.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = 12
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+mainClassName = "$moduleName/org.modernclients.Main"
+
+jlink {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'sample3'
+    }
+    jpackage {
+        if (javafx.getPlatform().name() == "OSX") {
+            installerType = "dmg"
+            jpackageHome = "/Users/<user>/Downloads/jdk-13.jdk/Contents/Home"
+        } else if (javafx.getPlatform().name() == "WINDOWS") {
+            installerType = "exe"
+            jpackageHome = "C:\\Users\\<user>\\Downloads\\jdk-13"
+            installerOptions = ['--win-menu', '--win-shortcut', '--win-dir-chooser']
+        }
+    }
+}

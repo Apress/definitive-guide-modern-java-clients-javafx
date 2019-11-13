@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <ImageView pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@1024px-ISS-RapidScat_nadir_adapter_removed_from_CRS-4_Dragon_trunk_(ISS041E049097).jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="195.0" layoutY="163.0" text="Hello World" textFill="WHITE">
+               <font>
+                  <Font name="Courier" size="96.0" />
+               </font>
+            </Label>
+            <Label layoutX="373.0" layoutY="267.0" text="Java" textFill="#ffa518">
+               <font>
+                  <Font size="77.0" />
+               </font>
+            </Label>
+            <Label layoutX="542.0" layoutY="267.0" text="FX" textFill="#5382a1">
+               <font>
+                  <Font size="77.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <Bloom />
+         </effect>
+      </AnchorPane>
+   </children>
+</GridPane>

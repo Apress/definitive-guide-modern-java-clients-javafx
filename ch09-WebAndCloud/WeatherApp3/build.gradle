@@ -1,0 +1,25 @@
+plugins {
+  id 'application'
+  id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://nexus.gluonhq.com/nexus/content/repositories/releases/'
+    }
+}
+
+dependencies {
+    implementation "com.gluonhq:charm-cloudlink-client:6.0.1"
+    runtimeOnly 'org.glassfish:jakarta.json:1.1.5:module'
+    implementation "com.gluonhq.attach:storage:4.0.2:desktop"
+    runtimeOnly "com.gluonhq.attach:util:4.0.2"
+}
+
+javafx {
+    version = "12.0.2"
+    modules = [ 'javafx.controls' ]
+}
+
+mainClassName = 'weather/org.modernclients.WeatherApp'
