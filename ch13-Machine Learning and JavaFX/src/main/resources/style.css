@@ -1,0 +1,63 @@
+.root{
+    -fx-base: rgb(230, 230, 255);
+    -fx-background: rgb(235, 235, 255);
+}
+
+.form-parent {
+    -fx-alignment: top-center;
+}
+
+.param-form {
+    -fx-alignment: center-left;
+    -fx-background-color: rgb(245, 245, 255);
+}
+.param-form .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: darkblue;
+    -fx-pref-width: 90;
+    -fx-font-size: 12px;
+}
+
+
+.param-form .text-field {
+    -fx-pref-width: 60px; 
+}
+
+.param-form .hyperlink {
+    -fx-pref-width: 120;
+}
+.spinner {
+    -fx-pref-width: 80;
+}
+.titled-pane {
+    -fx-font-weight: bold;
+    -fx-min-width: 250px;
+    -fx-min-height: 150px;
+}
+.statusLabel {
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+    -fx-font-fill: #d3d7cf;
+    -fx-pref-width: 200px;
+    -fx-font-size: 9px;
+    
+}
+
+.button {
+    -fx-font-style: italic;
+    -fx-text-fill: rgb(255, 100, 0);
+    -fx-background-radius: 2em;
+    -fx-border-insets: 10px;
+}
+
+#btnSave {
+    -fx-graphic: url("save.png");
+}
+
+#btnRun {
+    -fx-graphic: url("play.png");
+}
+
+#btnStop {
+    -fx-graphic: url("stop.png");
+}
