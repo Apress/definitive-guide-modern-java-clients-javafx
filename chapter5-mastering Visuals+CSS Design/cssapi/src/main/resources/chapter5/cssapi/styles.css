@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Weather Icons Regular';
+    src: url('weathericons-regular-webfont.ttf');
+}
+.root {
+    -fx-background-color: lightblue;
+    -fx-padding: 20px;
+}
+.thunderstorm {
+    -fx-weather: THUNDERSTORM;
+}
+.rain {
+    -fx-weather: RAIN;
+}
+.weather-icon {
+    -fx-graphic-text-gap: 30;
+    -fx-padding: 10;
+}
+
+.weather-icon:dangerous {
+    -fx-background-color: rgba(255, 0, 0, 0.25);
+}

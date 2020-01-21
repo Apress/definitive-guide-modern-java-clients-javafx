@@ -1,0 +1,12 @@
+/* resources/chapter5/introduction/styles.css */
+.root {
+    -fx-background-color: #AED2E2;
+    -fx-padding: 20px; 
+ }
+ .label {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-padding: 10px;
+ }
+ 
+ 
