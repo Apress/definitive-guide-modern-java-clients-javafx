@@ -1,0 +1,7 @@
+.button {
+    -fx-font-weight: bold;
+}
+.stackpane {
+    -fx-background-color: #2f4f4f;
+    -fx-padding: 15;
+}

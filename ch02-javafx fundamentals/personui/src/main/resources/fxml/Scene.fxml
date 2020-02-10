@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="326.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.modernclient.FXMLController">
+    <children>
+      <SplitPane dividerPositions="0.3411371237458194" prefHeight="326.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(aliceblue, lightblue);;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ListView fx:id="listView" layoutX="-17.0" layoutY="14.0" prefHeight="285.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="400.0">
+              <children>
+                  <GridPane hgap="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="298.0" prefWidth="340.0" vgap="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                    <columnConstraints>
+                      <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="65.0" />
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="265.0" minWidth="10.0" prefWidth="265.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="45.0" vgrow="NEVER" />
+                      <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="39.0" vgrow="NEVER" />
+                      <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="173.0" vgrow="ALWAYS" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                    </rowConstraints>
+                     <children>
+                            <Label text="First" />
+                            <TextField fx:id="firstnameTextField" onKeyReleased="#handleKeyAction" prefWidth="248.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                            <Label text="Last" GridPane.rowIndex="1" />
+                            <TextField fx:id="lastnameTextField" onKeyReleased="#handleKeyAction" prefWidth="248.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                        <Label text="Notes" GridPane.rowIndex="2" />
+                        <TextArea fx:id="notesTextArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyReleased="#handleKeyAction" prefHeight="173.0" prefWidth="265.0" wrapText="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                        <ButtonBar GridPane.columnSpan="2" GridPane.rowIndex="3">
+                           <buttons>
+                              <Button fx:id="createButton" mnemonicParsing="false" onAction="#createButtonAction" text="New" />
+                              <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateButtonAction" text="Update" />
+                              <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeButtonAction" text="Delete" />
+                           </buttons>
+                        </ButtonBar>
+                     </children>
+                  </GridPane>
+              </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+    </children>
+</AnchorPane>

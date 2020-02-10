@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="350.0" prefWidth="350.0" spacing="50.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.modernclient.FXMLController">
+    <children>
+        <StackPane fx:id="stackPane" onMouseClicked="#handleMouseClick" prefHeight="150.0" prefWidth="200.0">
+            <children>
+                <Ellipse radiusX="110.0" radiusY="70.0">
+                    <fill>
+                        <LinearGradient endX="0.5" endY="1.0" startX="0.5">
+                            <stops>
+                                <Stop color="DODGERBLUE" />
+                                <Stop color="LIGHTBLUE" offset="0.5" />
+                                <Stop color="LIGHTGREEN" offset="1.0" />
+                            </stops>
+                        </LinearGradient>
+                    </fill>
+                    <effect>
+                        <DropShadow color="GREY" offsetX="5.0" offsetY="5.0" />
+                    </effect>
+                </Ellipse>
+                <Text text="My Shapes">
+                    <font>
+                        <Font name="Arial Bold" size="24.0" />
+                    </font>
+                    <effect>
+                        <Reflection fraction="0.8" topOffset="1.0" />
+                    </effect>
+                </Text>
+            </children>
+        </StackPane>
+        <Text fx:id="text2" styleClass="mytext" text="Animation Status: ">
+            <font>
+                <Font name="Arial Bold" size="18.0" />
+            </font>
+        </Text>
+    </children>
+</VBox>
